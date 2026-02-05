@@ -246,7 +246,6 @@ async def root():
         "usage": get_usage_stats()
     }
     
-    @app.get("/api/models")
 @app.get("/api/models")
 async def list_models(x_api_key: str = Header(...)):
     if x_api_key != API_KEY:
