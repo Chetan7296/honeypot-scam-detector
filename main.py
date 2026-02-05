@@ -129,7 +129,7 @@ async def analyze_with_gemini(conversation_history: List[Message], current_messa
         print("🤖 Calling Gemini...")
         
         # USE GEMINI-PRO - MOST STABLE MODEL
-        model = genai.GenerativeModel(model_name="gemini-1.5-pro")
+        model = genai.GenerativeModel(model_name="gemini-2.5-pro")
 
         prompt = create_conversation_context(conversation_history, current_message)
 
