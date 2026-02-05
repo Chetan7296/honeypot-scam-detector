@@ -245,6 +245,12 @@ async def root():
         "version": "2.0",
         "usage": get_usage_stats()
     }
+    
+    @app.get("/api/models")
+async def list_models(x_api_key: str = Header(...)):
+    if x_api_key != API_KEY:
+        raise HTTPException(status_code=401, detail="Invalid API key")
+    return genai.list_models()
 
 @app.post("/api/detect-scam")
 async def detect_scam(request: IncomingRequest, x_api_key: str = Header(...)):
